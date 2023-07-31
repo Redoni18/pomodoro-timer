@@ -22,10 +22,6 @@ const SettingsContextProvider = (props) => {
         setStartAnimate(false)
     }
 
-    const stopTimer = () => {
-        setStartAnimate(false)
-    }
-
     const updateExecute = (updatedSettings) => {
         setExecuting(updatedSettings)
         setTimer(updatedSettings)
@@ -56,7 +52,7 @@ const SettingsContextProvider = (props) => {
     }
 
     return (
-        <SettingsContext.Provider value={{startTimer, pauseTimer, setCurrentTimer, updateExecute, pomodoro, setPomodoro, executing, startAnimate, setStartAnimate, stopTimer, updateExecute, children}}>
+        <SettingsContext.Provider value={{startTimer, pauseTimer, setCurrentTimer, pomodoro, setPomodoro, executing, startAnimate, setStartAnimate, updateExecute, children}}>
             {props.children}
         </SettingsContext.Provider>
     )

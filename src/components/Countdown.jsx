@@ -4,7 +4,7 @@ import { SettingsContext } from "../context/SettingsContext"
 import audioFile from "../assets/finish.mp3"
 
 const Countdown = ({countdownKey, timer, animate, children}) => {
-    const { stopTimer } = useContext(SettingsContext)
+    const { pauseTimer } = useContext(SettingsContext)
     const audioRef = useRef(null)
 
     return (
@@ -17,7 +17,7 @@ const Countdown = ({countdownKey, timer, animate, children}) => {
                 strokeWidth={6}
                 trailColor="#151932"
                 onComplete={() => {
-                    stopTimer()
+                    pauseTimer()
                     audioRef.current.play();
                 }}
                 size={220}
